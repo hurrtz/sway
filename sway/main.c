@@ -185,7 +185,7 @@ void enable_debug_flag(const char *flag) {
 }
 
 int main(int argc, char **argv) {
-	static int verbose = 0, debug = 0, validate = 0, allow_unsupported_gpu = 0;
+	static int verbose = 0, debug = 0, validate = 0;
 
 	static struct option long_options[] = {
 		{"help", no_argument, NULL, 'h'},
@@ -238,9 +238,6 @@ int main(int argc, char **argv) {
 			break;
 		case 'D': // extended debug options
 			enable_debug_flag(optarg);
-			break;
-		case 'u':
-			allow_unsupported_gpu = 1;
 			break;
 		case 'v': // version
 			fprintf(stdout, "sway version " SWAY_VERSION "\n");
